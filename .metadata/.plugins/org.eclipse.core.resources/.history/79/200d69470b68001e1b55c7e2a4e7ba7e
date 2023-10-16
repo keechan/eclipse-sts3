@@ -1,0 +1,16 @@
+package com.springbook.biz.board.impl;
+
+import com.springbook.biz.board.BoardService;
+import com.springbook.biz.board.BoardVO;
+
+public class BoardServiceImpl implements BoardService {
+
+	@Autowired
+	private Board board;
+	
+	@Override
+	public void insert(BoardVO vo) {
+		// TODO Auto-generated method stub
+		board.insert(vo);
+	}
+}

@@ -1,0 +1,25 @@
+package com.springbook.biz.Client;
+
+import com.springbook.biz.board.BoardServiceImpl;
+import com.springbook.biz.board.BoardVO;
+
+public class updateClient {
+
+	public static void main(String[] args) {
+		BoardServiceImpl service = new BoardServiceImpl();
+		
+		int k = 14; 
+		BoardVO voBefore = service.getBoard(k);
+		//System.out.println("===>" + voBefore);
+		
+		voBefore.setSeq(k);
+		voBefore.setTitle("TEST1");
+		voBefore.setWriter("TEST2");
+		voBefore.setContent("TEST3");
+		service.update(voBefore);
+		
+		BoardVO voAfter = service.getBoard(k);
+		//System.out.println("===>" + voAfter);
+	}
+
+}

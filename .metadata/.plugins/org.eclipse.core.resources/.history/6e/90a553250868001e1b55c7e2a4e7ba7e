@@ -1,0 +1,11 @@
+package com.springbook.biz.board.impl;
+
+import com.springbook.biz.board.BoardService;
+
+public class BoardServiceImpl implements BoardService {
+	private BoardDAO boardDAO;
+	
+	public void insertBoard(BoardDAO vo) {
+
+	}
+}

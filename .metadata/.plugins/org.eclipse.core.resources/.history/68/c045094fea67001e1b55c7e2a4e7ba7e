@@ -1,0 +1,36 @@
+package polymorphism;
+
+public class LgTV implements TV {
+	private Speaker speaker;
+	private int price;
+	
+	public LgTV() {
+		System.out.println("LgTV -- 객체 생성");
+	}
+	public LgTV(Speaker speaker, int price) {
+		this.speaker = speaker;
+		this.price = price;
+		System.out.println("LgTV --객체 생성(다중변수매핑)");
+	}
+	@Override
+	public void powerOn() {
+		System.out.println("LgTV -- 전원을 켠다.");		
+	}
+	@Override
+	public void powerOff() {
+		System.out.println("LgTV -- 전원을 끈다.");
+	}
+
+	@Override
+	public void volumeUp() {
+		// TODO Auto-generated method stub
+		System.out.println("LgTV -- 소리를 올린다.");
+	}
+
+	@Override
+	public void volumeDown() {
+		// TODO Auto-generated method stub
+		System.out.println("LgTV -- 소리를 줄인다.");
+		
+	}	
+}

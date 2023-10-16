@@ -1,0 +1,14 @@
+package com.springbook.biz.board;
+
+public class deleteClient {
+
+	public static void main(String[] args) {
+		BoardService service = new BoardServiceImpl();
+		
+		String sql = "delete from board where seq = ?";
+		
+		
+
+	}
+
+}

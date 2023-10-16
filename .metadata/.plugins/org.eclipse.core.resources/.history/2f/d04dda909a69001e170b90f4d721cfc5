@@ -1,0 +1,27 @@
+package com.springbook.biz.board;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class BoardDaoSpring implements BoardDao {
+	
+	@Override
+	public void insert(BoardVO vo) {
+		
+	}
+
+	@Override
+	public List<BoardVO> getBoardList() {
+
+		return null;
+	}
+
+	@Override
+	public void delete(BoardVO vo) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

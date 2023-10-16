@@ -1,0 +1,24 @@
+package com.springbook.biz.board;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class BoardServiceImpl implements BoardService {
+	public BoardServiceImpl() {
+		System.out.println("===> BoardServiceImpl");
+	}
+
+	@Override
+	public void insert(BoardVO vo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<BoardVO> selectAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

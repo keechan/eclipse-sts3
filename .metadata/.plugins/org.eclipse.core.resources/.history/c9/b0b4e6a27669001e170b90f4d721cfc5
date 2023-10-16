@@ -1,0 +1,15 @@
+package com.springbook.biz.board;
+
+import java.sql.Date;
+
+public class BoardVO {
+	public int seq;
+	public String title;
+	public String writer;
+	public String content;
+	public Date regdate;
+	public int cnt;
+
+	public String ch1;
+	public String ch2;
+}

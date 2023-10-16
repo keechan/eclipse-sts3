@@ -1,0 +1,8 @@
+package com.springbook.biz.board.impl;
+
+import com.springbook.biz.board.BoardService;
+
+public class BoardServiceImpl {
+
+	}
+}

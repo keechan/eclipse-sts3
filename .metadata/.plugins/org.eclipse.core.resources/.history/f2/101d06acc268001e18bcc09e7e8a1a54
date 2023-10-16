@@ -1,0 +1,26 @@
+package com.springbook.biz.Client;
+
+import java.util.List;
+
+import com.springbook.biz.board.BoardService;
+import com.springbook.biz.board.BoardServiceImpl;
+import com.springbook.biz.board.BoardVO;
+
+public class deleteClient {
+
+	public static void main(String[] args) {
+		BoardService service = new BoardServiceImpl();
+		List<BoardVO> li = null;
+		
+		int k = 113;
+		//먼저 삭제
+		service.delete(k);
+		//삭제 확인
+		li = service.getBoardList();
+		for (int i=0;i<li.size();i++) {
+			BoardVO vo = li.get(i);
+			System.out.println("=====>" + vo);
+		}
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.springbook.biz.Client;
+
+import com.springbook.biz.board.BoardService;
+import com.springbook.biz.board.BoardServiceImpl;
+import com.springbook.biz.board.BoardVO;
+
+public class InsertClient {
+
+	public static void main(String[] args) {
+		BoardServiceImpl service = new BoardServiceImpl();
+		BoardVO vo = new BoardVO();
+		
+		vo.setSeq(101);
+		vo.setTitle("김");
+		vo.setWriter("MBC방송국");
+		vo.setTitle("안녕하세요? 김태호 PD입니다.");
+		vo.setContent("안녕하세요? 김태호 PD입니다.");
+
+		service.insert(vo);
+	}
+
+}

@@ -1,0 +1,23 @@
+package com.springbook.biz.board;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class BoardDaoImpl implements BoardDao {
+
+	@Override
+	public void insert(BoardVO vo) {
+		System.out.println("===> BoardDaoImpl(insert)");		
+		System.out.println("===> vo 확인" + vo);
+	}
+
+	@Override
+	public List<BoardVO> getBoardList() {
+		System.out.println("===> BoardDaoImpl(getBoardList)");
+		
+		return null;
+	}
+
+}

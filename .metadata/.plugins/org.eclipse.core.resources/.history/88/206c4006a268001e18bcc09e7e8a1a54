@@ -1,0 +1,46 @@
+package com.springbook.biz.board;
+
+import java.util.List;
+
+public class BoardServiceImpl implements BoardService {
+
+	public BoardServiceImpl() {
+		
+	}
+	@Override
+	public void insert(BoardVO vo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void update(BoardVO vo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(int k) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public BoardVO getBoard(int k) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<BoardVO> getBoardList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<BoardVO> getBoardList(String ch1, String ch2) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

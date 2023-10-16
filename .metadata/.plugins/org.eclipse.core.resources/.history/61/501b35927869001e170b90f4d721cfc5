@@ -1,0 +1,9 @@
+package com.springbook.biz.board;
+
+import java.util.List;
+
+public interface BoardDao {
+	void insert(BoardVO vo);
+	//List<BoardVO> selectAll();
+	List<BoardVO> getBoardList();
+}

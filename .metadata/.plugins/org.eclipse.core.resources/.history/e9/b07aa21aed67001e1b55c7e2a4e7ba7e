@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ 	<!-- property name의 이름을 필드명과 동일하게 지정함  -->
+	<bean id="tv" class="polymorphism.SamsungTV">
+		<property name="speaker" ref="speaker"></property>
+		<property name="price" value=3700000></property>
+	</bean>
+ 
+	<bean id="speaker" class="polymorphism.SonySpeaker"></bean>
+</beans>

@@ -1,0 +1,19 @@
+package com.springbook.biz.board;
+
+import java.util.List;
+
+public class BoardDaoImpl implements BoardDao {
+
+	@Override
+	public void insert(BoardVO vo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<BoardVO> selectAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

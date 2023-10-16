@@ -1,0 +1,10 @@
+package com.springbook.biz.board;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class BoardServiceImpl {
+	public BoardServiceImpl() {
+		System.out.println("===> BoardServiceImpl");
+	}
+}

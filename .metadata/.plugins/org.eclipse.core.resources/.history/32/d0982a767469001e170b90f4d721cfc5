@@ -1,0 +1,31 @@
+package com.springbook.biz.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.springbook.biz.board.BoardVO;
+
+@Controller
+public class BoardController {
+	public BoardController() {
+		System.out.println("===> BoardController");
+	}
+	@RequestMapping("/insertBoard.do")
+	public String insert(BoardVO vo) {
+		System.out.println("===> insertBoard.do 매핑확인 ");
+		
+		return "getBoardList.do";	 
+	}
+	
+	@RequestMapping("/getBoardList.do")
+	public ModelAndView getBoardList(BoardVO vo, ModelAndView mav ) {
+
+		System.out.println("===> getBoardList.do 매핑확인 ");
+
+		mav.addObject("boardList", "boardList 값") ;
+		mav.setViewName("getBoardList.jsp");
+		return mav;
+	}
+[출처] [23/90] 스프링 웹프로그램 처음 - 게시판까지 (6) - Controller 매핑 시험 (비공개 카페)
+}

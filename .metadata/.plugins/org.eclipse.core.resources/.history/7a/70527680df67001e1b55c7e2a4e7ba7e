@@ -1,0 +1,19 @@
+package polymorphism;
+
+public class AppleSpeaker implements Speaker {
+	public AppleSpeaker() {
+		System.out.println("==> Apple Speaker 객체 생성");
+	}
+	
+	@Override
+	public void volumeUp() {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void volumeDown() {
+		// TODO Auto-generated method stub
+		System.out.println("Apple speaker volume Down");
+	}
+
+}

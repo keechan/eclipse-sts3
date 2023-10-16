@@ -1,0 +1,32 @@
+package com.springbook.biz.board.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.springbook.biz.board.BoardVO;
+import com.springbook.biz.common.DBConnection;
+
+public class BoardDAO implements Board {
+
+	@Override
+	public void insert(BoardVO vo) {
+		try {
+			DBConnection dbConn = DBConnection.getInstance();
+			Connection conn = dbConn.getConnection();
+			
+			//(select nvl(max(seq), 0) + 1 from board)
+			String sql = "insert into board (seq, title, writer, content) values" 
+			           + "                  (?, ?, ?, ?)'";
+		
+			PreparedStatement pstmt = conn.prepareStatement(null);
+			pstmt.setInt(1, 11);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+}

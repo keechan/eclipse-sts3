@@ -1,0 +1,30 @@
+package com.springbook.biz.Client;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+import com.springbook.biz.board.BoardService;
+
+public class ClientAll {
+
+	public static void main(String[] args) {
+		AbstractApplicationContext container = 
+				new GenericXmlApplicationContext();
+		BoardService service = (BoardService) container.getBean("BoardService");
+		BoardVO vo = new BoareVO();
+		String sw = "delete";
+		
+		if (sw.equals("listAll")) {
+			
+		} else if (sw.equals("list")) {
+			
+		} else if (sw.equals("update")) {
+			
+		} else if (sw.equals("delete")) {
+			
+		} 
+		
+		container.close();
+	}
+
+}

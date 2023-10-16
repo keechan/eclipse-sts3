@@ -1,0 +1,13 @@
+package com.springbook.biz.Client;
+
+import com.springbook.biz.board.BoardService;
+import com.springbook.biz.board.BoardServiceImpl;
+
+public class InsertClient {
+
+	public static void main(String[] args) {
+		BoardServiceImpl service = new BoardServiceImpl();
+
+	}
+
+}

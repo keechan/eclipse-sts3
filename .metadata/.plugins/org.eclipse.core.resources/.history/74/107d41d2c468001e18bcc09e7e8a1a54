@@ -1,0 +1,22 @@
+package com.springbook.biz.Client;
+
+import com.springbook.biz.board.BoardServiceImpl;
+import com.springbook.biz.board.BoardVO;
+
+public class updateClient {
+
+	public static void main(String[] args) {
+		BoardServiceImpl service = new BoardServiceImpl();
+		
+		int k = 14; 
+		BoardVO vo = service.getBoard(k);
+		System.out.println("===>" + vo);
+		
+		service.update(vo);
+		
+		BoardVO vo = service.getBoard(k);
+		System.out.println("===>" + vo);
+
+	}
+
+}

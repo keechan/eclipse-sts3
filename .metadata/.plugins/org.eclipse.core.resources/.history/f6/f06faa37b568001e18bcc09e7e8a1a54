@@ -1,0 +1,11 @@
+package com.springbook.biz.Client;
+
+import com.springbook.biz.board.BoardService;
+import com.springbook.biz.board.BoardServiceImpl;
+
+public class selectClient {
+	public static void main(String[] args) {
+		BoardService service = new BoardServiceImpl();
+
+	}
+}

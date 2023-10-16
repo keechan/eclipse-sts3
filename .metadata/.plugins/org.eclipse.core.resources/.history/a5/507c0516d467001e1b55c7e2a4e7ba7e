@@ -1,0 +1,16 @@
+package polymorphism;
+
+public class TVUser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BeanFactory factory = new BeanFactory();
+		factory.getBean(args[0]);
+		tv.powerOn();
+		tv.powerOff();
+		
+		LgTV ltv = new LgTV();
+		ltv.powerOn();
+		ltv.powerOff();
+	}
+}

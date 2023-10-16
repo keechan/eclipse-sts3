@@ -1,0 +1,25 @@
+package com.springbook.biz.controller;
+
+import org.springframework.stereotype.Controller;
+
+import com.springbook.biz.board.BoardVO;
+
+@Controller
+public class BoardController {
+	public BoardController() {
+		System.out.println("===> BoardController");
+	}
+	@RequestMapping("/insertBoard.do")
+	public String insert(BoardVO vo) {
+		System.out.println("===>  메소드 실행 insert(HttpServletRequest request) ");
+		
+		return "getBoardList.do";	 
+	}
+	
+	@RequestMapping("/getBoardList.do")
+	public ModelAndView getBoardList(BoardVO vo, ModelAndView mav ) {
+		mav.addObject("boardList", "boardList 값") ;
+		mav.setViewName("getBoardList.jsp");
+		return mav;
+	}
+}

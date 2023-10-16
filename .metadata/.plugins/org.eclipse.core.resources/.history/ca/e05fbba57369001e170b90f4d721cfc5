@@ -1,0 +1,15 @@
+package com.springbook.biz.controller;
+
+import org.springframework.stereotype.Controller;
+
+import com.springbook.biz.board.BoardVO;
+
+@Controller
+public class BoardController {
+	public BoardController() {
+		System.out.println("===> BoardController");
+	}
+	public String insert(BoardVO vo) {
+		return "getBoardList.do";
+	}
+}

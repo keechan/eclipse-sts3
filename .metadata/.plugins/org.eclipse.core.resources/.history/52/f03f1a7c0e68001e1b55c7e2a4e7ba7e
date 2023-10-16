@@ -1,0 +1,10 @@
+package com.springbook.biz.board.impl;
+
+import java.util.List;
+
+import com.springbook.biz.board.BoardVO;
+
+public interface Board {
+	void insert(BoardVO vo);
+	BoardVO getBoardList();
+}

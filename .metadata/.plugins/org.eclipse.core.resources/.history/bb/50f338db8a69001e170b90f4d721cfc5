@@ -1,0 +1,39 @@
+package com.springbook.biz.board;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class BoardDaoImpl implements BoardDao {
+
+	@Autowired
+	private DBConnection DBConn;
+	private Connection conn = null;
+	String sql = "";
+	PreparedStatement pstmt = null;
+	
+	@Override
+	public void insert(BoardVO vo) {
+		conn = DBConn.getInstance();
+		String sql = "insert into Board (seq, title, writer, content) "
+				   + "values (?, ?, ?, ?)";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, vo.getSeq());
+		pstmt.setString(2, vo.getTitle());
+		pstmt.setString(3, vo.getWriter());
+		pstmt.setString(4, vo.getContent());
+		pstmt.executeUpdate();
+	}
+
+	@Override
+	public List<BoardVO> getBoardList() {
+		System.out.println("===> BoardDaoImpl(getBoardList)");
+		
+		return null;
+	}
+
+}

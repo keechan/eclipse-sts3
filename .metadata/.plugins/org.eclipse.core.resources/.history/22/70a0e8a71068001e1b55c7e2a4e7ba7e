@@ -1,0 +1,78 @@
+package com.springbook.biz.board.impl;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.springbook.biz.board.BoardVO;
+import com.springbook.biz.common.DBConnection;
+
+@Repository
+public class BoardDAO implements Board {
+
+	@Override
+	public void insert(BoardVO vo) {
+		try {
+			DBConnection dbConn = DBConnection.getInstance();
+			Connection conn = dbConn.getConnection();
+			
+			//(select nvl(max(seq), 0) + 1 from board)
+			String sql = "insert into board (seq, title, writer, content) values" 
+			           + "                  (?, ?, ?, ?)";
+		
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, vo.getSeq());
+			pstmt.setString(2, vo.getTitle());
+			pstmt.setString(3, vo.getWriter());
+			pstmt.setString(4, vo.getContent());
+			int T = pstmt.executeUpdate();
+			if (T >= 0) {
+				System.out.println("저장성공!");
+			} else {
+				System.out.println("저장실패!");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+	}
+
+	@Override
+	public List<BoardVO> getBoardList() {
+		try {
+			List<BoardVO> boardList = new ArrayList<BoardVO>();
+			
+			DBConnection dbConn = DBConnection.getInstance();
+			Connection conn = dbConn.getConnection();
+			ResultSet rs = null;
+			
+			String sql = "select * from board order by seq desc"; 
+
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				BoardVO board = new BoardVO();
+				board.setSeq(rs.getInt("SEQ"));
+				board.setTitle(rs.getString("TITLE"));
+				board.setWriter(rs.getString("WRITER"));
+				board.setContent(rs.getString("CONTENT"));
+				board.setRegDate(rs.getDate("REGDATE"));
+				board.setCnt(rs.getInt("CNT"));
+				boardList.add(board);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			
+		}
+		
+		return boardList;
+	}
+	
+}
